@@ -65,6 +65,7 @@ pub enum Message {
     Power(power::Message),
     #[cfg(feature = "page-sound")]
     Sound(sound::Message),
+    User(system::users::Message),
     #[cfg(feature = "page-input")]
     SystemShortcuts(input::keyboard::shortcuts::ShortcutMessage),
     #[cfg(feature = "page-input")]

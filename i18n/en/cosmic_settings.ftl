@@ -751,3 +751,7 @@ firmware = Firmware
 
 users = Users
     .desc = Authentication and user accounts.
+    .standard = Standard
+    .add-user = Add user
+    .cancel = Cancel
+    .admin = Admin

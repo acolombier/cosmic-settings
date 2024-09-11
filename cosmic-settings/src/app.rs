@@ -487,6 +487,12 @@ impl cosmic::Application for SettingsApp {
                     }
                 }
 
+                crate::pages::Message::User(message) => {
+                    if let Some(page) = self.pages.page_mut::<system::users::Page>() {
+                        return page.update(message).map(Into::into);
+                    }
+                }
+
                 #[cfg(feature = "page-input")]
                 crate::pages::Message::SystemShortcuts(message) => {
                     if let Some(page) = self
