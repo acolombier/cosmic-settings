@@ -409,7 +409,7 @@ fn workspace_orientation() -> Section<crate::pages::Message> {
                             cosmic::iced::widget::row!(
                                 text(&descriptions[switch_workspace]),
                                 cosmic::iced::widget::horizontal_space(2),
-                                text(&descriptions[switch_ws_label]).font(cosmic::font::FONT_BOLD),
+                                text(&descriptions[switch_ws_label]).font(cosmic::font::bold()),
                                 cosmic::iced::widget::horizontal_space(Length::Fill),
                                 cosmic::iced::widget::container(cosmic::iced::widget::svg(
                                     switch_ws
@@ -425,7 +425,7 @@ fn workspace_orientation() -> Section<crate::pages::Message> {
                             cosmic::iced::widget::row!(
                                 text(&descriptions[open_workspaces]),
                                 cosmic::iced::widget::horizontal_space(2),
-                                text(&descriptions[open_ws_label]).font(cosmic::font::FONT_BOLD),
+                                text(&descriptions[open_ws_label]).font(cosmic::font::bold()),
                                 cosmic::iced::widget::horizontal_space(Length::Fill),
                                 cosmic::iced::widget::container(cosmic::iced::widget::svg(open_ws))
                                     .width(115)
@@ -441,7 +441,7 @@ fn workspace_orientation() -> Section<crate::pages::Message> {
                                     text(&descriptions[open_applications]),
                                     cosmic::iced::widget::horizontal_space(2),
                                     text(&descriptions[open_app_label])
-                                        .font(cosmic::font::FONT_BOLD),
+                                        .font(cosmic::font::bold()),
                                     cosmic::iced::widget::horizontal_space(Length::Fill),
                                     cosmic::iced::widget::container(cosmic::iced::widget::svg(
                                         open_app
@@ -474,7 +474,8 @@ fn workspace_overview() -> Section<crate::pages::Message> {
         .descriptions(descriptions)
         .view::<Page>(move |_binder, page, section| {
             let descriptions = &section.descriptions;
-            settings::view_section(&section.title)
+            settings::section()
+                .title(&section.title)
                 .add(
                     settings::item::builder(&descriptions[show_number])
                         .toggler(page.show_workspace_name, Message::SetShowName),

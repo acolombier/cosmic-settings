@@ -1447,7 +1447,6 @@ dependencies = [
 [[package]]
 name = "cosmic-comp-config"
 version = "0.1.0"
-source = "git+https://github.com/pop-os/cosmic-comp#be38da47e9d778e3917b256faf6870750bb7a4e3"
 dependencies = [
  "cosmic-config",
  "input",
